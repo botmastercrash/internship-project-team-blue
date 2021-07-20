@@ -1,7 +1,5 @@
-from sys import is_finalizing
 import scrapy
-import logging
-from ADPProject.items import OzoneItem
+from scrapyProject.items import scrapyProjectItem
 
 class OzoneSpider(scrapy.Spider):
     name = 'ozone'
@@ -9,11 +7,12 @@ class OzoneSpider(scrapy.Spider):
     start_urls = ['https://www.ozone.bg/gaming/console-and-accessories/']
 
     def extractInfo(self, response):
-        item = OzoneItem()
+        item = scrapyProjectItem()
         item = {
-        "is_available": (response.xpath('''//*[@id="products-list"]/div[2]/a/span[3]/span/text()''').get().find("PlayStation 4") != -1),
-        "price": response.xpath('''//*[@class="regular-price"]/span/text()[1]''').getall()
+            "name": response.xpath(''' //*[@id="products-list"]/div/a/span[3]/span/text() ''')
         }
+
+        yield item
       
     def parse(self, response):
         i = 2

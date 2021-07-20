@@ -6,6 +6,5 @@
 import scrapy
 
 
-class OzoneItem(scrapy.Item):
-    is_available = scrapy.Field();
-    price = scrapy.Field();
+class ScrapyprojectItem(scrapy.Item):
+   name = scrapy.Field();

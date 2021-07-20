@@ -1,4 +1,4 @@
-# Scrapy settings for ADPProject project
+# Scrapy settings for scrapyProject project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'ADPProject'
+BOT_NAME = 'scrapyProject'
 
-SPIDER_MODULES = ['ADPProject.spiders']
-NEWSPIDER_MODULE = 'ADPProject.spiders'
+SPIDER_MODULES = ['scrapyProject.spiders']
+NEWSPIDER_MODULE = 'scrapyProject.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'ADPProject (+http://www.yourdomain.com)'
+#USER_AGENT = 'scrapyProject (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'ADPProject.middlewares.AdpprojectSpiderMiddleware': 543,
+#    'scrapyProject.middlewares.ScrapyprojectSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'ADPProject.middlewares.AdpprojectDownloaderMiddleware': 543,
+#    'scrapyProject.middlewares.ScrapyprojectDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'ADPProject.pipelines.AdpprojectPipeline': 300,
+   'scrapyProject.pipelines.ScrapyprojectPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
