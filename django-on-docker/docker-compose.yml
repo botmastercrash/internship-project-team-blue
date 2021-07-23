@@ -1,0 +1,33 @@
+version: '3.7'
+
+services: 
+  web:
+    build:
+      context: ./app
+      args:
+        - DJANGO_ALLOWED_HOSTS=$DJANGO_ALLOWED_HOSTS
+        - SECRET_KEY=$SECRET_KEY
+    command: /bin/sh -c "
+       python manage.py migrate
+       && python manage.py runserver 0.0.0.0:8000
+       "
+#    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./app:/usr/src/app/
+    ports: 
+      - 8000:8000
+    env_file:
+      - .env
+    container_name: django
+    depends_on: 
+      - db
+  db:
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file: 
+      - ./env-vars/.env.db.dev
+    container_name: pgdb
+
+volumes: 
+  postgres_data:
