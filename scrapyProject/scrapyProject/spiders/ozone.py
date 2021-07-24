@@ -1,5 +1,5 @@
 import scrapy
-from scrapyProject.items import scrapyProjectItem
+from scrapyProject.items import ScrapyprojectItem
 
 class OzoneSpider(scrapy.Spider):
     name = 'ozone'
@@ -7,9 +7,9 @@ class OzoneSpider(scrapy.Spider):
     start_urls = ['https://www.ozone.bg/gaming/console-and-accessories/']
 
     def extractInfo(self, response):
-        item = scrapyProjectItem()
+ #      item = ScrapyprojectItem()
         item = {
-            "name": response.xpath(''' //*[@id="products-list"]/div/a/span[3]/span/text() ''')
+            "name": response.xpath(''' //*[@id="products-list"]/div[2]/a/span[3]/span/text() ''').getall()
         }
 
         yield item
