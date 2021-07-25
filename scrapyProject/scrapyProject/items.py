@@ -5,6 +5,5 @@
 
 import scrapy
 
-
 class ScrapyprojectItem(scrapy.Item):
    name = scrapy.Field();
